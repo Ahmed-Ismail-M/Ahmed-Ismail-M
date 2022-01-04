@@ -1,0 +1,9 @@
+{% extends "layout.html"%}
+{% block body %}
+    <body>
+        <h1>
+           the name is  {{name}} and id is {{id}}
+        </h1>
+        <a href="{%url 'finance:home'%}">Customers</a>
+    </body>
+{% endblock%}

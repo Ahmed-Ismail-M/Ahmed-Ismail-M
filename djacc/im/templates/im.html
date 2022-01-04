@@ -1,0 +1,95 @@
+{% extends 'home.html' %}
+{% block section %}
+{% if message %}
+<div class="alert alert-{{category}}" role="alert">{{ message }}
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  </div>
+<!-- <p class=error><strong>Error:</strong> {{ error }} -->
+{% endif %}
+    <div class="grid ">
+        
+        <div class="text-center bg-primary flex-column intro">
+            <div class="anim-form my-1 {{form}}">
+                <form class="flex-column" method="POST" name="subsribe-form" onsubmit="return ValidateEmail(document.subsribe-form.email)">
+                    <input autofocus type="text" name="email" id="" placeholder="Email" class="my-1 p-1" required >
+                    <input type="text" name="phone" id="" placeholder="Phone Number" required class="p-1">
+                    <div class="flex"> 
+                        <input type="submit" class="my-1 p-1 general-submit">
+                        <button class="my-1 p-1" id="cancel-btn">Cancel</button>
+                            
+                    </div>
+                   
+                </form>
+            </div>
+            
+            <div class="left-side {{side}}">
+                <h1 class="lg"> We Develop Your App </h1>
+                <p class="my-1 md"> Get your demo now !</p>
+                <button class="general-btn my-1 p-1">Request a demo</button>
+            </div>
+        </div>
+            <img id='bodyimg' src="../static/imges/PC.png">
+    </div>
+    <div class="xl underline ">
+        Services
+    </div>
+    <div class="grid grid-4 text-center my-3" >
+        <div class="card desktop">
+            <h1>
+                Desktop
+            </h1>
+            <picture>
+                <source srcset="../static/imges/Icon-awesome-desktop-dark.png" media="(prefers-color-scheme: dark)" >
+                <img src="../static/imges/Icon awesome-desktop@2x.png" alt="">
+            </picture>
+        </div>
+        <div class="card web">
+            <h1>
+                Web
+            </h1>
+            <picture>
+                <source  media="(prefers-color-scheme: dark)" srcset="Icon awesome-cloud-dark.png">
+                <img src="../static/imges/Icon zocial-cloudapp@2x.png" alt="">
+            </picture>
+        </div>
+        <div class="card deployment">
+            <h1>
+                Deployment
+            </h1>
+            <picture>
+                <source srcset="../static/imges/Icon awesome-server-dark" media="(prefers-color-scheme: dark)" >
+                <img src="../static/imges/Icon awesome-server@2x.png" alt="">
+            </picture>
+        </div>
+        <div class="card android">
+            <h1>
+                Android
+            </h1>
+            <picture>
+                <source srcset="../static/imges/Icon zocial-android-dark.png" media="(prefers-color-scheme: dark)" >
+                <img src="../static/imges/Icon zocial-android.png" alt="">
+            </picture>
+            
+        </div>
+    </div>
+    <div class="xl underline ">
+        IM-Free Apps
+    </div>
+    <div class="grid text-center my-3" >
+        <div >
+           
+            <div class='my-1'>
+                <a href="drug-finder" target="_blank"><img id="LinkedBodyimg" src="../static/imges/Drug-Finder_graphic.png" alt=""></a>
+            </div>
+        </div>
+        <div >
+          
+            <div class='my-1'>
+                <a href="https://play.google.com/store/apps/details?id=com.hesabat" target="_blank"><img id="LinkedBodyimg" src="../static/imges/hesabat-promo2.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+<!-- Service -->
+
+
+{% endblock %}
