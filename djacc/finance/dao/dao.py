@@ -1,5 +1,5 @@
 """ dao"""
-from finance.interface import IEntityDAO
+from finance.interface.interface import IEntityDAO
 from finance.models import Customer
 
 class CustomerDAO(IEntityDAO):
