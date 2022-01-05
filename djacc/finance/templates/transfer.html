@@ -1,0 +1,13 @@
+{% extends "layout.html"%}
+{% block body %}
+    <body>
+        <h1>
+Add Transfer        </h1>
+        <a href="{%url 'finance:home'%}">Home</a>
+        <form action="{% url 'finance:transfer'%}" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit">
+        </form>
+    </body>
+{% endblock%}
