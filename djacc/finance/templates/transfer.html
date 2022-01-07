@@ -2,9 +2,10 @@
 {% block body %}
     <body>
         <h1>
-Add Transfer        </h1>
+        Make Transfer From {{customer.first_name}} </h1>
         <a href="{%url 'finance:home'%}">Home</a>
-        <form action="{% url 'finance:transfer'%}" method="post">
+        
+        <form action="{% url 'finance:transfer' customer.id %}" method="post">
             {% csrf_token %}
             {{form}}
             <input type="submit">

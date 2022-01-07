@@ -1,10 +1,15 @@
 {% extends "layout.html"%}
 {% block body %}
     <body>
-        <h1>
-           the name is  {{name}} and id is {{id}}
-        </h1>
+        <ul>
+           {% for customer in customers%}
+           <li>
+            <a href="{% url 'finance:transfer' customer.id %}">
+                Customer : {{customer.first_name}} Balance {{customer.balance}} $
+            </a>
+           </li>
+           {%endfor%}
+        </ul>
         <a href="{%url 'finance:home'%}">Home</a>
-        <a href="{%url 'finance:transfer'%}">Transfer</a>
     </body>
 {% endblock%}
