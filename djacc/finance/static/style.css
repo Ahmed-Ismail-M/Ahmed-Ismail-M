@@ -3,9 +3,13 @@ padding: 30px;
 }
 h1{
     text-align: center;
+    padding:20px;
 }
 li{
     margin-left: 10px;
+}
+label{
+    padding: 10px;
 }
     
   

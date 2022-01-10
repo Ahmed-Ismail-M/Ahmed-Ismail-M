@@ -5,18 +5,8 @@
         
         
         <form action="{% url 'finance:transfer' customer.id %}" method="post" class="mb-3">
-            <div  class="form-row">
-                <div class="row">
-                    <div class="col">
                         {% csrf_token %}
                         {{form}}
-                    </div>
-                    <div class="col">
                         <input type="submit">
-                    </div>
-                  </div>
-             
-            </div>
-            
         </form>
 {% endblock%}
