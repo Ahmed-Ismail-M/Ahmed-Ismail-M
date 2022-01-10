@@ -1,15 +1,28 @@
 {% extends "layout.html"%}
 {% block body %}
-    <body>
-        <ul>
-           {% for customer in customers%}
-           <li>
-            <a href="{% url 'finance:transfer' customer.id %}">
-                Customer : {{customer.first_name}} Balance {{customer.balance}} $
-            </a>
-           </li>
+        <table class="table">
+           <thead >
+            <th scope="col">name</th>
+             <th scope="col">Balance</th>
+             <th scope="col"></th>
+           </thead>
+           <tbody>
+            {% for customer in customers%}
+            <tr>
+                <td>
+                    {{customer.first_name}}
+                </td>
+                <td>
+                    {{customer.balance}}
+                </td>
+                <td>
+                    <a href="{% url 'finance:transfer' customer.id %}" > Transfer Money
+                    </a>
+                </td>
+            </tr>
+         
            {%endfor%}
-        </ul>
-        <a href="{%url 'finance:home'%}">Home</a>
-    </body>
+           </tbody>
+            
+        </table>
 {% endblock%}
