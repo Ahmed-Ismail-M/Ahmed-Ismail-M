@@ -27,7 +27,10 @@ def transfer(request, cust_id):
         if form.is_valid():
             amount = form.cleaned_data["amount"]
             customer_to = Customer.objects.get(pk=form.cleaned_data["cust_name"])
-
+            customer_to.balance = customer_to.balance+ amount
+            customer_from.balance = customer_from.balance - amount
+            customer_to.save()
+            customer_from.save()
             return HttpResponseRedirect(reverse("finance:cust"))
         else:
             return render(request, "transfer.html", {
