@@ -1,5 +1,5 @@
 .json
 jsonservice.py
-/__pycache__/
-/.idea/
+__pycache__/
+.idea/
 db.sqlite3
